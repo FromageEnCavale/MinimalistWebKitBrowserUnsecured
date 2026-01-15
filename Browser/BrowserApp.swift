@@ -54,7 +54,7 @@ struct BrowserCommands: Commands {
         
         CommandGroup(after: .newItem) {
             
-            Button("Open the URL bar") {
+            Button("Open URL Bar") {
                 
                 onToggleURLBar()
                 
@@ -62,13 +62,13 @@ struct BrowserCommands: Commands {
             
             .keyboardShortcut(" ", modifiers: .control)
             
-            Button("Reload the page") {
+            Button("Reload Page") {
                 
                 onReload()
                 
             }
             
-            .keyboardShortcut("r", modifiers: .control)
+            .keyboardShortcut("r", modifiers: .command)
             
         }
         
@@ -656,4 +656,3 @@ struct URLResolver {
     }
     
 }
-
