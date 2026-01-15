@@ -1,98 +1,10 @@
 [
-    /* ===============================
-     1. TRACKERS GÉNÉRIQUES (PRIORITÉ)
-     =============================== */
     {
         "trigger": {
-            "url-filter": "analytics|tracker|tracking|telemetry|metrics|beacon|pixel|collect|events",
-            "resource-type": ["script", "image", "xhr", "fetch", "ping", "raw"]
-        },
-        "action": { "type": "block" }
-    },
-
-    /* ===============================
-     2. TRACKERS CONNUS (MAJEURS)
-     =============================== */
-    {
-        "trigger": {
-            "url-filter": "google-analytics|googletagmanager|doubleclick|googlesyndication|adsystem|adservice",
-            "resource-type": ["script", "image", "xhr", "fetch"]
-        },
-        "action": { "type": "block" }
-    },
-    {
-        "trigger": {
-            "url-filter": "facebook|fbcdn|connect\\.facebook|graph\\.facebook|pixel\\.facebook",
-            "resource-type": ["script", "image", "xhr", "fetch"]
-        },
-        "action": { "type": "block" }
-    },
-    {
-        "trigger": {
-            "url-filter": "amazon-adsystem|adsystem\\.amazon|scorecardresearch|quantserve",
-            "resource-type": ["script", "image", "xhr", "fetch"]
-        },
-        "action": { "type": "block" }
-    },
-
-    /* ===============================
-     3. TRACKING CDNs & DATA BROKERS
-     =============================== */
-    {
-        "trigger": {
-            "url-filter": "segment|mixpanel|amplitude|hotjar|fullstory|clarity|heap|intercom|sentry",
-            "resource-type": ["script", "xhr", "fetch"]
-        },
-        "action": { "type": "block" }
-    },
-
-    /* ===============================
-     4. BLOQUAGE TIERS PAR DÉFAUT
-     =============================== */
-    {
-        "trigger": {
-            "url-filter": ".*",
-            "load-type": ["third-party"],
-            "resource-type": ["xhr", "fetch", "ping"]
-        },
-        "action": { "type": "block" }
-    },
-
-    /* ===============================
-     5. PUB CLASSIQUE (SECONDaire)
-     =============================== */
-    {
-        "trigger": {
-            "url-filter": "ads|advert|banner|sponsor|promoted",
-            "resource-type": ["script", "image", "iframe"]
-        },
-        "action": { "type": "block" }
-    },
-
-    /* ===============================
-     6. IFRAMES TIERS (TRACKING + ADS)
-     =============================== */
-    {
-        "trigger": {
-            "url-filter": ".*",
-            "load-type": ["third-party"],
-            "resource-type": ["iframe"]
-        },
-        "action": { "type": "block" }
-    },
-
-    /* ===============================
-     7. PIXELS INVISIBLES
-     =============================== */
-    {
-        "trigger": {
-            "url-filter": ".*",
-            "resource-type": ["image"],
-            "url-filter-is-case-sensitive": false
+            "url-filter": "ads"
         },
         "action": {
-            "type": "block",
-            "selector": "img[width='1'][height='1'], img[style*='display:none']"
+            "type": "block"
         }
     }
 ]
