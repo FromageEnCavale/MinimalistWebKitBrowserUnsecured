@@ -1,7 +1,7 @@
 [
     {
         "trigger": {
-            "url-filter": "ads"
+            "url-filter": "/ads\\.js$"
         },
         "action": {
             "type": "block"
